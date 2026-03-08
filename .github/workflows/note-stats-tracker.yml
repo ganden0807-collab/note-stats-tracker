@@ -29,7 +29,8 @@ jobs:
           NOTE_USERNAME: ${{ secrets.NOTE_USERNAME }}
           COOKIE_SET_DATE: ${{ secrets.COOKIE_SET_DATE }}
         run: python scripts/fetch_stats.py
-
+      - name: Run Analyze Script
+        run: python scripts/analyze.py --articles data/articles.csv --out data/
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
