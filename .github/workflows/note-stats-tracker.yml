@@ -38,6 +38,6 @@ jobs:
           git add data/*.csv
           if ! git diff --staged --quiet; then
             git commit -m "Update note stats: $(date +'%Y-%m-%d %H:%M')"
-            git pull --rebase origin main　--force
+            git pull --rebase origin main --force
             git push origin main
           fi
